@@ -1,0 +1,252 @@
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem 2rem;
+    color: #fff;
+  }
+  
+  .navbar .logo { 
+    font-weight: bold;
+  }
+    
+  
+  .navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+  }
+  
+  .navbar .nav-links li a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .banner {
+    position: relative;
+    width: 100%;
+height: 400px;
+    overflow: hidden;
+    
+  }
+  
+  .banner img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+  }
+  
+  .banner-text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: #fff;
+  }
+  
+  .banner-text h1 {
+    font-size: 40px;
+    margin-bottom: 5px;
+    margin-left: 140px;
+  }
+  
+  .banner-text p {
+    font-size: 20px;
+    margin-left: 140px;
+  }
+
+  .blink-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 150px;
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1);
+  
+}
+.blink-button:hover {
+  transform:scale(1.2);
+}
+
+  
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;          
+  left: 0;
+  background-color: #eee;
+  min-width: 140px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 10;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Each link inside dropdown */
+.dropdown-content li a {
+  display: block;
+  padding: 10px 16px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+  background-color: #007bff;
+}
+
+/* Show menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Optional: highlight parent link on hover */
+.dropdown:hover > a {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.services {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f5f7fb;
+}
+.services h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.service-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.service-box {
+  background-color:#7ebee5;
+  color: white;
+  width: 500px;
+  padding: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+}
+
+.service-box img {
+  width: 100px;
+  height: 100px;
+  margin-right: 15px;
+  flex-shrink: 0;
+  border-radius: 100%;
+}
+
+.service-text h3 {
+  margin-left: 10px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.service-text p {
+  font-size: 0.9rem;
+  margin-left: 20px;
+  opacity: 0.85;
+  color: #333;
+}
+
+/* Responsive adjustment */
+@media (max-width: 800px) {
+  .service-boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+ 
+  /* .specialties {
+    padding: 2rem;
+    background-color: #f0f0f0;
+    text-align: center;
+  }
+  
+  .specialties-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+  
+  .specialty {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 200px;
+  }
+  
+  .specialty img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .specialty h3 {
+    margin-top: 0.5rem;
+  }
+  
+  .cities {
+    padding: 2rem;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .city-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .city-list li {
+    background-color: #e3f2fd;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+  }
+   */
+  footer {
+    background-color: #7ebee5;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+  }
+  

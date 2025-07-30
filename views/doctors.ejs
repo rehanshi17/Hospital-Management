@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Doctors List</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>List of Doctors</h2>
+
+    <% if (doctors.length === 0) { %>
+      <p>No doctors found in the database.</p>
+    <% } else { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Speciality</th>
+            <th>City</th>
+            <th>Contact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% doctors.forEach(doc => { %>
+            <tr>
+              <td><%= doc.name %></td>
+              <td><%= doc.age %></td>
+              <td><%= doc.speciality %></td>
+              <td><%= doc.city %></td>
+              <td><%= doc.contact %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } %>
+  </div>
+</body>
+</html>

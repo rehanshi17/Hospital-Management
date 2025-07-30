@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Appointment</title>
+  <link rel="stylesheet" href="appointment.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <h2>Book Appointment</h2>
+
+      <label for="speciality">Treatment</label>
+      <select id="speciality">
+        <option value="">Select treatment</option>
+        <option value="Cardiology">Cardiology</option>
+        <option value="Neurology">Neurology</option>
+        <option value="Pediatrics">Pediatrics</option>
+        <option value="Orthopaedics">Orthopaedics</option>
+        <option value="Urology">Urology</option>
+      </select>
+
+      <label for="city">City</label>
+      <select id="city">
+        <option value="">Select city</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Jaipur">Jaipur</option>
+      </select>
+
+      <div class="buttons">
+        <button class="back-btn">Back</button>
+        <button class="next-btn" onclick="goToDoctorDetails()">Next</button>
+      </div>
+
+      <p class="note">By submitting this form, you are agreeing to our <a href="#">Privacy Policy</a></p>
+    </div>
+
+    <div class="image-box">
+      <img src="appointment.jpeg" alt="Medical" />
+    </div>
+  </div>
+
+  <script>
+    function goToDoctorDetails() {
+      const speciality = document.getElementById("speciality").value;
+      const city = document.getElementById("city").value;
+
+      if (!speciality || !city) {
+        alert("Please select both treatment and city.");
+        return;
+      }
+
+      // Redirect to result.html with query parameters
+      window.location.href = `result.html?speciality=${encodeURIComponent(speciality)}&city=${encodeURIComponent(city)}`;
+    }
+  </script>
+</body>
+</html>

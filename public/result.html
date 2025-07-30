@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Doctor Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #f2f2f2;
+    }
+
+    h2 {
+      color: #0a4c6d;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .doctor-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 300px;
+      transition: transform 0.2s ease;
+    }
+
+    .doctor-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .doctor-card h3 {
+      margin-bottom: 10px;
+      color: #0a4c6d;
+    }
+
+    .doctor-card p {
+      margin: 6px 0;
+      font-size: 15px;
+    }
+
+    .no-data {
+      text-align: center;
+      font-size: 18px;
+      color: #777;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Available Doctors</h2>
+  <div class="card-container" id="doctor-card-container"></div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const speciality = urlParams.get("speciality");
+    const city = urlParams.get("city");
+
+    fetch(`/api/doctors?speciality=${encodeURIComponent(speciality)}&city=${encodeURIComponent(city)}`)
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("doctor-card-container");
+
+        if (data.length === 0) {
+          container.innerHTML = "<div class='no-data'>No doctors found</div>";
+          return;
+        }
+
+        data.forEach(doc => {
+          const card = document.createElement("div");
+          card.className = "doctor-card";
+          card.innerHTML = `
+            <h3> ${doc.name}</h3>
+            <p><strong>Position:</strong> ${doc.position}</p>
+            <p><strong>Speciality:</strong> ${doc.speciality}</p>
+            <p><strong>Experience:</strong> ${doc.experience} years</p>
+            <p><strong>Fees:</strong> ₹${doc.fees}</p>
+            <p><strong>City:</strong> ${doc.city}</p>
+          `;
+          container.appendChild(card);
+        });
+      })
+      .catch(err => {
+        alert("Error loading doctors.");
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
